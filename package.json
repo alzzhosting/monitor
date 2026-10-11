@@ -1,0 +1,21 @@
+{
+  "name": "samp-monitor",
+  "version": "1.0.0",
+  "description": "SAMP Server Monitor - Cyberpunk UI",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "samp",
+    "monitor",
+    "cyberpunk",
+    "express"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
