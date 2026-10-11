@@ -3,92 +3,73 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SAMP MONITOR // CYBERNET</title>
+  <title>SAMP Monitor</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="scanlines"></div>
-  <div class="noise"></div>
-
-  <div class="container">
-    <!-- Header -->
+  <div class="page">
     <header class="header">
-      <div class="logo">
-        <span class="logo-bracket">[</span>
-        <span class="logo-text">SAMP</span>
-        <span class="logo-bracket">]</span>
-        <span class="logo-sub">MONITOR</span>
+      <div class="brand">
+        <div class="brand-icon">S</div>
+        <span class="brand-name">SAMP Monitor</span>
       </div>
-      <div class="status-indicator">
-        <span class="pulse" id="statusDot"></span>
-        <span id="statusText">CONNECTING...</span>
+      <div class="status" id="statusBadge">
+        <span class="status-dot" id="statusDot"></span>
+        <span id="statusText">Connecting</span>
       </div>
     </header>
 
-    <!-- Main Card -->
-    <main class="main-card">
-      <div class="card-border"></div>
-      
-      <!-- Server Name -->
-      <div class="server-name-section">
-        <div class="label">// SERVER NAME</div>
-        <h1 class="server-name" id="serverName">LOADING...</h1>
+    <main class="card">
+      <div class="server-section">
+        <p class="label">Server Name</p>
+        <h1 class="server-name" id="serverName">Loading...</h1>
       </div>
 
-      <!-- Players -->
       <div class="players-section">
-        <div class="players-box">
-          <div class="label">PLAYERS</div>
-          <div class="players-count">
-            <span class="current" id="currentPlayers">0</span>
-            <span class="separator">/</span>
-            <span class="max" id="maxPlayers">20</span>
-          </div>
-          <div class="progress-bar">
-            <div class="progress-fill" id="progressFill"></div>
-          </div>
+        <div class="players-header">
+          <span class="label">Players Online</span>
+          <span class="players-text">
+            <strong id="currentPlayers">0</strong>
+            <span class="slash">/</span>
+            <span id="maxPlayers">20</span>
+          </span>
+        </div>
+        <div class="progress">
+          <div class="progress-bar" id="progressFill"></div>
         </div>
       </div>
 
-      <!-- Info Grid -->
       <div class="info-grid">
-        <div class="info-item">
-          <div class="info-label">GAMEMODE</div>
-          <div class="info-value" id="gamemode">-</div>
+        <div class="info-box">
+          <span class="info-label">Gamemode</span>
+          <span class="info-value" id="gamemode">-</span>
         </div>
-        <div class="info-item">
-          <div class="info-label">LANGUAGE</div>
-          <div class="info-value" id="language">-</div>
+        <div class="info-box">
+          <span class="info-label">Language</span>
+          <span class="info-value" id="language">-</span>
         </div>
-        <div class="info-item">
-          <div class="info-label">ADDRESS</div>
-          <div class="info-value mono" id="address">149.248.204.196:7011</div>
+        <div class="info-box">
+          <span class="info-label">Address</span>
+          <span class="info-value mono" id="address">149.248.204.196:7011</span>
         </div>
-        <div class="info-item">
-          <div class="info-label">PASSWORD</div>
-          <div class="info-value" id="password">-</div>
+        <div class="info-box">
+          <span class="info-label">Password</span>
+          <span class="info-value" id="password">-</span>
         </div>
       </div>
 
-      <!-- Footer -->
-      <div class="card-footer">
-        <div class="last-update">
-          LAST UPDATE: <span id="lastUpdate">--:--:--</span>
-        </div>
-        <button class="refresh-btn" id="refreshBtn" onclick="fetchServer()">
-          <span class="btn-icon">⟳</span> REFRESH
+      <div class="footer-row">
+        <span class="last-update">Updated <span id="lastUpdate">--:--:--</span></span>
+        <button class="btn-refresh" id="refreshBtn" onclick="fetchServer()">
+          Refresh
         </button>
       </div>
     </main>
 
-    <footer class="footer">
-      <span>CYBERNET MONITOR v1.0</span>
-      <span class="dot">•</span>
-      <span>REAL-TIME SAMP QUERY</span>
-    </footer>
+    <p class="page-footer">Monitor Ferlay · Real-time</p>
   </div>
 
   <script src="app.js"></script>
