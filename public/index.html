@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0a0814" />
+  <title>SAMP Monitor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Latar berwarna supaya efek kaca terlihat -->
+  <div class="bg" aria-hidden="true"><i></i><i></i><i></i></div>
+
+  <div class="page">
+    <header class="header">
+      <div class="brand">
+        <div class="brand-icon">S</div>
+        <span class="brand-name">SAMP Monitor</span>
+      </div>
+      <div class="status glass" id="statusBadge" role="status" aria-live="polite">
+        <span class="status-dot" id="statusDot"></span>
+        <span id="statusText">Connecting</span>
+      </div>
+    </header>
+
+    <main class="card glass" id="card">
+      <div class="server-section">
+        <p class="label">Nama server</p>
+        <h1 class="server-name" id="serverName">Loading...</h1>
+      </div>
+
+      <div class="players-section glass">
+        <div class="players-header">
+          <span class="label">Pemain online</span>
+          <span class="players-text">
+            <strong id="currentPlayers">0</strong>
+            <span class="slash">/</span>
+            <span id="maxPlayers">20</span>
+          </span>
+        </div>
+        <div class="progress">
+          <div class="progress-bar" id="progressFill"></div>
+        </div>
+      </div>
+
+      <div class="info-grid">
+        <div class="info-box glass">
+          <span class="info-label">Gamemode</span>
+          <span class="info-value" id="gamemode">-</span>
+        </div>
+        <div class="info-box glass">
+          <span class="info-label">Bahasa</span>
+          <span class="info-value" id="language">-</span>
+        </div>
+        <div class="info-box info-box-row glass">
+          <span class="info-label">Password</span>
+          <span class="info-value" id="password">-</span>
+        </div>
+        <div class="info-box info-box-wide glass">
+          <span class="info-label">Alamat</span>
+          <span class="info-value mono" id="address">149.248.204.196:7011</span>
+        </div>
+      </div>
+
+      <div class="footer-row">
+        <span class="last-update">Diperbarui <span id="lastUpdate">--:--:--</span></span>
+        <button class="btn-refresh glass" id="refreshBtn" onclick="fetchServer()">
+          Refresh
+        </button>
+      </div>
+    </main>
+
+    <p class="page-footer">SAMP Monitor · Query real-time</p>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
